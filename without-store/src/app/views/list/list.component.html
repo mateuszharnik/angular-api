@@ -1,0 +1,31 @@
+<app-spiner [@fade]="isLoading" *ngIf="isLoading; else list"></app-spiner>
+<ng-template #list>
+  <section [@fade]="isLoading" class="w-full absolute">
+    <app-alert *ngIf="isError; else display"></app-alert>
+    <ng-template #display>
+      <div class="flex flex-wrap">
+        <h2 class="w-full text-center text-5xl mb-2 text-yellow-dark">
+          {{ category() }}
+        </h2>
+        <div
+          class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-1 md:p-2"
+          *ngFor="let result of results"
+        >
+          <app-card [result]="result"></app-card>
+        </div>
+        <div *ngIf="nextPage" class="w-full text-center mt-4 mb-8">
+          <button
+            [disabled]="isDisabled"
+            title="Load more"
+            type="button"
+            (click)="loadMore()"
+            class="bg-yellow-dark hover:bg-yellow text-black font-bold py-3 px-6 rounded-full"
+          >
+            Load more
+            <i *ngIf="isDisabled" class="ml-1 fas fa-circle-notch fa-spin"></i>
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </section>
+</ng-template>

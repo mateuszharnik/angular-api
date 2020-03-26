@@ -1,0 +1,19 @@
+<section
+  class="md:max-w-sm md:mx-auto rounded bg-black overflow-hidden shadow-lg"
+>
+  <div class="px-6 py-6 flex flex-wrap">
+    <div class="w-full mb-6 text-center font-bold text-xl capitalize">
+      {{ text }}
+    </div>
+    <div class="w-full text-center">
+      <a
+        class="bg-yellow-dark no-underline hover:bg-yellow text-black
+          font-bold py-2 px-4 rounded"
+        routerLink="/{{ text.toLowerCase() }}"
+        [title]="text"
+      >
+        See more...
+      </a>
+    </div>
+  </div>
+</section>

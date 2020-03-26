@@ -1,0 +1,9 @@
+<div>
+  <app-nav-bar></app-nav-bar>
+  <main
+    [@routerFade]="prepareRoute(outlet)"
+    class="container mx-auto mt-8 relative"
+  >
+    <router-outlet #outlet="outlet"></router-outlet>
+  </main>
+</div>

@@ -1,0 +1,26 @@
+<div class="w-full text-xl">
+  <p class="my-2 text-yellow-dark">
+    Language: <span class="capitalize text-white">{{ result.language }}</span>
+  </p>
+  <p class="my-2 text-yellow-dark">
+    Average height:
+    <span class="text-white">{{ result.average_height }} cm</span>
+  </p>
+  <p class="my-2 text-yellow-dark">
+    Average lifespan:
+    <span class="text-white">{{ result.average_lifespan }}</span>
+  </p>
+  <p class="my-2 text-yellow-dark">
+    Skin colors:
+    <span class="capitalize text-white">{{ result.skin_colors }}</span>
+  </p>
+  <p class="my-2">
+    <a
+      routerLink="/planets/{{ id() }}"
+      title="Go to planet"
+      class="text-yellow-dark no-underline hover:text-yellow"
+    >
+      Homeworld
+    </a>
+  </p>
+</div>

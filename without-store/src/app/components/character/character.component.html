@@ -1,0 +1,30 @@
+<div class="text-xl">
+  <p class="my-2 text-yellow-dark">
+    Birth year: <span class="text-white">{{ result.birth_year }}</span>
+  </p>
+  <p class="my-2 text-yellow-dark">
+    Gender: <span class="capitalize text-white">{{ result.gender }}</span>
+  </p>
+  <p class="my-2 text-yellow-dark">
+    Eye color: <span class="capitalize text-white">{{ result.eye_color }}</span>
+  </p>
+  <p class="my-2 text-yellow-dark">
+    Hair color:
+    <span class="capitalize text-white">{{ result.hair_color }}</span>
+  </p>
+  <p class="my-2 text-yellow-dark">
+    Height: <span class="text-white">{{ result.height }} cm</span>
+  </p>
+  <p class="my-2 text-yellow-dark">
+    Mass: <span class="text-white">{{ result.mass }} kg</span>
+  </p>
+  <p class="my-2">
+    <a
+      routerLink="/planets/{{ id() }}"
+      title="Go to planet"
+      class="text-yellow-dark no-underline hover:text-yellow"
+    >
+      Homeworld
+    </a>
+  </p>
+</div>

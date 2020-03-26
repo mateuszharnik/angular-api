@@ -1,0 +1,47 @@
+<app-spiner [@fade]="isLoading" *ngIf="isLoading; else item"></app-spiner>
+<ng-template #item>
+  <section [@fade]="isLoading" class="w-full p-1 md:p-2 absolute">
+    <app-alert *ngIf="isError || result.detail; else display"></app-alert>
+    <ng-template #display>
+      <div
+        class="md:max-w-sm md:mx-auto h-full rounded bg-black overflow-hidden shadow-lg"
+      >
+        <div class="px-10 py-10 flex flex-wrap">
+          <div
+            class="w-full mb-2 text-yellow-dark font-bold text-4xl capitalize"
+          >
+            {{ result.name || result.title }}
+          </div>
+          <app-film
+            class="w-full"
+            *ngIf="result.director"
+            [result]="result"
+          ></app-film>
+          <app-planet
+            class="w-full"
+            *ngIf="result.climate"
+            [result]="result"
+          ></app-planet>
+          <app-specie
+            class="w-full"
+            *ngIf="result.average_height"
+            [result]="result"
+          ></app-specie>
+          <app-character
+            class="w-full"
+            *ngIf="result.gender"
+            [result]="result"
+          ></app-character>
+          <a
+            routerLink="/{{ backLink() }}"
+            title="Back"
+            class="bg-yellow-dark hover:bg-yellow text-black
+            font-bold no-underline py-2 px-4 rounded-full"
+          >
+            Back
+          </a>
+        </div>
+      </div>
+    </ng-template>
+  </section>
+</ng-template>
